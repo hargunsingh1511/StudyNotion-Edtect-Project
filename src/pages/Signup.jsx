@@ -53,7 +53,7 @@ const Signup = () => {
   return (
     <div className=' bg-richblack-900 '>
     <div className=' flex flex-col-reverse lg:flex-row w-10/12 mx-auto  mt-16 items-center justify-between'>
-        <div className=' flex flex-col lg:w-[35%] mt-1'>
+        <div className=' flex flex-col mb-3 lg:w-[35%] mt-6 lg:mt-1'>
             <div className=' text-3xl font-semibold text-richblack-5 font-inter'>
             Join the millions learning to code with StudyNotion for free
             </div> 

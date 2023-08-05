@@ -1,12 +1,13 @@
 const express = require("express")
 const router = express.Router()
-const { auth } = require("../middelwares/auth")
+const { auth, isInstructor, isStudent, isAdmin } = require("../middelwares/auth")
 const {
   deleteAccount,
   updateProfile,
   getAllUserDetails,
   updateDisplayPicture,
   getEnrolledCourses,
+  instructorDashboard, 
 } = require("../controllers/profile"); 
 const{resetPasswordToken}=require("../controllers/ResetPassword")
 // ********************************************************************************************************
@@ -21,5 +22,5 @@ router.get("/getUserDetails", auth, getAllUserDetails)
 // Get Enrolled Courses
 router.get("/getEnrolled",auth,  getEnrolledCourses)
 router.put("/updateDisplayPicture", auth, updateDisplayPicture)
-
+router.get("/instructorDashboard", auth, isInstructor, instructorDashboard)
 module.exports = router 

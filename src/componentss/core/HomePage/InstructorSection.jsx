@@ -5,11 +5,11 @@ import Button from './Button'
 import { FaArrowRight } from 'react-icons/fa'
 const InstructorSection = () => {
   return (
-    <div className=' flex gap-20 items-center  mt-16'>
-        <div className=' w-[50%] shadow-[-10px_-10px_0px_0_rgba(255,255,255,255)]'>
-            <img src={instructor}/>
+    <div className=' flex flex-col lg:flex-row gap-20 items-center  mt-16'>
+        <div className=' lg:w-[50%] shadow-[-10px_-10px_0px_0_rgba(255,255,255,255)]'>
+            <img src={instructor} alt='Instructor'/>
         </div>
-        <div className=' w-[50%] flex flex-col gap-10'>
+        <div className=' lg:w-[50%] flex flex-col gap-10'>
             <div className=' text-4xl font-semibold w-[50%]'>
                 Beacome an <HighlightText text={"Instructor"}/>
             </div>

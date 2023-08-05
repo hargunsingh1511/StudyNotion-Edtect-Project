@@ -1,23 +1,25 @@
 const RatingAndReview=require("../models/RatingAndReview");
 const Course=require("../models/Course");
-const {mongoose, Mongoose } = require("mongoose");
+const { mongo, default: mongoose } = require("mongoose");
 
 exports.createRating=async(req,res)=>{
     try {
         const{rating,review,courseId}=req.body;
-        const{userId}=req.user.id;
+        const userId=req.user.id;
         if(!rating ||!review){
             return res.status(401).json({
                 success:false,
                 message:"Please provide rating and review"})
         }
-
-        const courseDetails=await RatingAndReview.findOne({_id:courseId,studentEnroleed:{$elemMatch:{$eq:userId}},});
+        const courseDetails = await Course.findOne(
+            {_id:courseId,
+            studentsEnrolled: {$elemMatch: {$eq: userId} },
+        });
 
         if(!courseDetails){
             return res.status(400).json({
                 success:false,
-                message:"student is not enrooled for rating"})
+                message:"student is not enroled for rating"})
             }
         const alreadyReviewed=await RatingAndReview.findOne({user:userId,
                                                             Course:courseId   })
@@ -33,9 +35,10 @@ exports.createRating=async(req,res)=>{
             course:courseId
         })
         await Course.findByIdAndUpdate(courseId,{$push:{ratingAndReview:ratingReview._id}},{new:true});
-        return res.status(400).json({
-            success:trye,
-            message:"rating and review created"})
+        return res.status(200).json({
+            success:true,
+            message:"rating and review created",
+            ratingReview,})
         
 
     } catch (error) {

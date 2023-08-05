@@ -9,6 +9,8 @@ import Statsomponent from '../componentss/core/about/Statsomponent'
 import LearningGrid from '../componentss/core/about/LearningGrid'
 import ContactFormSection from '../componentss/core/about/ContactFormSection'
 import Footer from '../componentss/common/Footer'
+import InstructorSection from '../componentss/core/HomePage/InstructorSection';
+import ReviewSlider from '../componentss/common/ReviewSlider'
 const About = () => {
   return (
     <div className=' text-richblack-5 w-full ' >
@@ -89,6 +91,12 @@ const About = () => {
         <section  className=' mx-auto items-center lg:w-5/12 w-10/12 gap-5 mt-[90px] mb-[140px]'>
           <ContactFormSection cont={false}/>
         </section>
+
+        <div className=' w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter:uppercase bg-richblack-900 text-white'>
+            <InstructorSection/>
+            <h2 className=' text-center text-4xl font-semibold mt-10'>Reviews from other learners</h2>
+            <ReviewSlider />
+    </div>
 
         <section>
           <Footer/>

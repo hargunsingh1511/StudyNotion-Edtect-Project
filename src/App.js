@@ -24,6 +24,9 @@ import MyCourses from './componentss/core/dashboard/MyCourses';
 import EditCourse from './componentss/core/dashboard/Edit Course';
 import Catalog from './pages/Catalog';
 import CourseDetails from './pages/CourseDetails';
+import ViewCourse from './pages/ViewCourse';
+import VedioDetails from './componentss/core/viewCourse/VedioDetails';
+import Instructor from './componentss/core/dashboard/InstructorDashboard/Instructor';
 const App=()=>{
   const {user}=useSelector((state)=>state.profile)
   return (
@@ -60,6 +63,7 @@ const App=()=>{
               <>
               <Route path='/dashboard/add-course' element={<AddCourse/>}/>
               <Route path='/dashboard/my-courses' element={<MyCourses/>}/>
+              <Route path='/dashboard/instructor' element={<Instructor/>}/>
               <Route path='/dashboard/edit-course/:courseId' element={<EditCourse/>}/>
 
               
@@ -67,6 +71,16 @@ const App=()=>{
             )
           }
 
+        </Route>
+
+        <Route element={<PrivateRoute><ViewCourse/></PrivateRoute> }>
+          {
+            user?.accountType===ACCOUNT_TYPE.STUDENT&&(
+              <>
+                <Route  path="view-course/:courseId/section/:sectionId/sub-section/:subSectionId" element={<VedioDetails/>}></Route>
+              </>
+            )
+          }
         </Route>
       
         <Route path='*' element={<ErrorPage/>}/>

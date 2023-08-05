@@ -31,6 +31,9 @@ const {
   deleteSection,
 } = require("../controllers/Section")
 
+const {
+  updateCourseProgress
+}=require("../controllers/courseProgress")
 // Sub-Sections Controllers Import
 const {
   createSubSection,
@@ -78,6 +81,8 @@ router.get("/getInstructorCourses", auth, isInstructor, getInstructorCourse)
 router.delete("/deleteCourse", deleteCourse)
 // Get Details for a Specific Courses
 router.post("/getFullCourseDetails", auth, getFullCourseDetails)
+router.post("/updateCourseProgress", auth,isStudent,updateCourseProgress)
+
 
 // ********************************************************************************************************
 //                                      Category routes (Only by Admin)

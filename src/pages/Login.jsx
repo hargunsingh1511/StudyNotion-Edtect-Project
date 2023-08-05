@@ -27,7 +27,7 @@ const Login = () => {
   return (
     <div className=' bg-richblack-900 '>
         <div className='  flex flex-col-reverse lg:flex-row w-10/12 mx-auto  mt-16 items-center justify-between'>
-            <div className=' flex flex-col w-[35%]'>
+            <div className=' flex flex-col mt-6 w-full lg:w-[35%]'>
                 <div className=' text-4xl font-semibold text-richblack-5 font-inter'>Welcome Back</div> 
                 <div className=' mt-3 text-richblack-100 text-lg'>Build skills for today, tomorrow, and beyond.</div>
                 <i className=' text-lg'><HighlightText text={"Education to future-proof your career."}/></i>

@@ -1,5 +1,6 @@
 import React from 'react'
 import * as Icons from "react-icons/vsc"
+import {AiOutlineShoppingCart} from "react-icons/ai"
 import { useDispatch } from 'react-redux';
 import { NavLink, matchPath, useLocation } from 'react-router-dom';
 const SideBarLink = ({link,iconName}) => {
