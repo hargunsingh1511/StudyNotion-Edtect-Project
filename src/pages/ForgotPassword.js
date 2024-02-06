@@ -36,7 +36,7 @@ const ForgotPassword = () => {
                         !emailSent &&(
                             <label>
                                 <p className=' mt-9 mb-1 text-richblack-100'>Email Address <sup className=' text-pink-400'>*</sup> </p>
-                                <input required type='email' name='email' value={email} onChange={(e)=>(setEmail(e.target.value))} placeholder=' Enter Your Email Address' className=' w-full bg-richblack-800 p-3 rounded-md shadow shadow-richblack-400'/>
+                                <input required type='email' name='email' value={email} onChange={(e)=>(setEmail(e.target.value))} placeholder=' Enter Your Email Address' className=' w-full bg-richblack-800 p-3  text-richblack-100 rounded-md shadow shadow-richblack-400'/>
                             </label>
                         )
                     }
