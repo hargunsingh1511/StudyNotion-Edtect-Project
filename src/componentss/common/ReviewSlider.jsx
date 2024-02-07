@@ -38,13 +38,13 @@ const ReviewSlider = () => {
             <Swiper
             slidesPerView={4}
             spaceBetween={24}
-            loop={true}
+            loop={false}
             freeMode={true}
             autoplay={{
             delay: 2500,
-            disableOnInteraction: false,
+            disableOnInteraction: false, 
             }}
-            modules={[FreeMode, Pagination, Autoplay]}
+            modules={[FreeMode, Pagination,Navigation, Autoplay]}
             className='w-full'
             >
 

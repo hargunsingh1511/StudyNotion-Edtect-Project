@@ -40,12 +40,12 @@ const CourseSlider = ({Courses}) => {
         <Swiper
           slidesPerView={1}
           spaceBetween={25}
-          loop={true}
+          loop={false}
           autoplay={{
           delay: 2000,
           disableOnInteraction: false,
           }}
-          modules={[FreeMode,Autoplay, Pagination]}
+          modules={[FreeMode,Autoplay,Navigation, Pagination]}
           breakpoints={{
             1024: {
               slidesPerView: 3,
