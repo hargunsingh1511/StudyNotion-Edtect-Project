@@ -4,7 +4,7 @@ StudyNotion aims to provide:
 -A seamless and interactive learning experience for students, making education more accessible and engaging.
 -A platform for instructors to showcase their expertise and connect with learners across the globe.
 
-Live At- https://studynotion-frontend-delta.vercel.app/
+Live At- https://study-notion-edtech-hargunsingh1511.vercel.app/
 
 The StudyNotion ed-tech platform consists of three main components: the front end, the back end, and the database. The platform follows a client-server architecture, with the front end serving as the client and the back end and database serving as the server.
 ## Front-end
